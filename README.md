@@ -1,6 +1,8 @@
 ![Open Source](https://blog.syloe.com/wp-content/uploads/2018/04/opensource.png)
 # Loxina Bot Open-Source
-### Commençons par connecter le bot
+### Créer le compte du bot
+![Bot #1](https://i.imgur.com/aAcwaIu.png)
+### Coder le bot
 
 ```javascript
 const Discord = require("discord.js")
