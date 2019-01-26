@@ -20,7 +20,7 @@
 
 ```javascript
 const Discord = require("discord.js")
-const {client, bot} = new Discord.Client({disableEveryone: true})
+const client = new Discord.Client({disableEveryone: true})
 const Config = require("./config.json")
 client.login(Config.token)
 ```
@@ -33,3 +33,26 @@ client.login(Config.token)
 #### ❔ A quoi sert le fichier `config.json` ? 
 #### Il sert à mettre les informations privées ou principal dans un autre fichier que le fichier principal, mieux si vous montrez des screens de votre code
 ### Mettre un jeu sur le bot et changer son status
+#### Rendez-vous dans le fichier `index.js` puis editez ce code
+```javascript
+
+client.on("ready" () => {
+    client.user.setActivity("ICI LE JEU DU BOT")
+    client.user.setStatus("dnd ou idle ou online")
+})
+```
+#### Et voilà, le bot à desormais son jeu, il reste plus qu'a le lancer
+### Connexion du bot
+![Bot #4](https://i.imgur.com/iIIyQu5.png)
+#### Faites `cd ` suivi du dossier du bot sur votre pc
+#### Une fois que la commande ci-dessus est faites, vous pouvez désormais faire `node index.js` pour lancer le bot
+##### ⚠️ Quand vous fermerez cette fenêtre, le bot s'arrêtera, nous verrons prochainement comment le mettre en place sur un vps
+### Création de commandes
+#### Pour créer des commandes, recopier le code suivant : 
+```javascript
+client.on("message", message => {
+    if(message.content.startsWith("LE PREFIX DE VOTRE BOT"+ "LE NOM DE VOTRE COMMANDE")) {
+        ICI LE CODE A EXECUTER LORS QU ON EXECUTE CETTE COMMANDE
+    }
+})
+```
